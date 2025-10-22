@@ -1,0 +1,77 @@
+
+:root{
+  --brand:#136f63;       /* teal-emerald */
+  --brand-2:#f97316;     /* orange accent */
+  --brand-3:#0ea5e9;     /* sky */
+  --ink:#111827;         /* gray-900 */
+  --muted:#6b7280;       /* gray-500 */
+  --bg:#f8fafc;          /* slate-50 */
+  --card:#ffffff;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(2,6,23,.08);
+}
+*{box-sizing:border-box}
+html,body{margin:0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; color:var(--ink); background:var(--bg)}
+h1,h2,h3{font-family:'Outfit', 'Inter', system-ui, sans-serif; letter-spacing:.2px}
+a{color:var(--brand); text-decoration:none}
+img{max-width:100%; display:block}
+
+.badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#eafaf3; color:var(--brand); border:1px solid #b7ecd6; font-weight:600; font-size:13px}
+
+header{position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow)}
+.wrap{max-width:1100px; margin:auto; padding:0 20px}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:14px; height:72px}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{width:44px; height:44px; border-radius:10px}
+.brand b{font-size:1.15rem}
+.nav a.btn{padding:10px 16px; border-radius:999px; border:1px solid #d7dee3; font-weight:600}
+.nav a.cta{background:linear-gradient(135deg, var(--brand), var(--brand-3)); color:#fff; border-color:transparent}
+
+.hero{position:relative; overflow:hidden}
+.hero .slides{display:flex; width:300%; animation:slide 21s infinite}
+.hero figure{position:relative; width:100%; margin:0; height:min(70vh,680px)}
+.hero figure img{object-fit:cover; width:100%; height:100%}
+.hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.2) 40%, rgba(0,0,0,.5))}
+.hero .copy{position:absolute; inset:0; display:grid; place-items:center; text-align:center; color:#fff; padding:20px}
+.hero h1{font-size: clamp(28px, 4.5vw, 52px); margin:0 0 10px}
+.hero p{font-size: clamp(16px, 2.2vw, 20px); opacity:.95; margin:0 0 18px}
+.hero .actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px; font-weight:700; border:1px solid transparent; box-shadow:var(--shadow)}
+.btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff}
+.btn.light{background:#ffffffdd; color:#0a0a0a; border-color:#fff}
+
+@keyframes slide{0%{transform:translateX(0)} 28%{transform:translateX(0)} 33%{transform:translateX(-100%)} 61%{transform:translateX(-100%)} 66%{transform:translateX(-200%)} 95%{transform:translateX(-200%)} 100%{transform:translateX(0)}}
+
+section{padding:64px 0}
+h2{font-size: clamp(22px, 3.2vw, 34px); margin:0 0 10px}
+p.lead{font-size:18px; color:var(--muted)}
+
+.grid{display:grid; gap:18px}
+.grid.features{grid-template-columns: repeat(auto-fit, minmax(240px,1fr))}
+.card{background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); border:1px solid #eef2f7}
+.card h3{margin:8px 0 6px; font-size:20px}
+.card .sub{color:var(--muted); font-size:14px; margin-top:4px}
+
+.gallery{display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr))}
+.gallery figure{margin:0; overflow:hidden; border-radius:16px; box-shadow:var(--shadow)}
+
+.ribbon{display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 0}
+.ribbon .chip{background:#fff; border:1px dashed #c7e6ff; color:#0369a1; padding:6px 10px; border-radius:999px; font-size:12px}
+
+.testis{display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(280px,1fr))}
+.quote{background:linear-gradient(180deg,#fff, #fff8f3); padding:22px; border-left:6px solid var(--brand-2); border-radius:12px; box-shadow:var(--shadow)}
+.quote p{margin:0 0 10px}
+.quote .who{font-weight:700; color:#7c2d12}
+
+.contact{display:grid; gap:20px; grid-template-columns:1.2fr .8fr; align-items:start}
+.contact .panel{background:#fff; padding:24px; border-radius:16px; box-shadow:var(--shadow)}
+.contact .kv{display:grid; gap:8px}
+
+footer{padding:28px 0 42px; text-align:center; color:#5b6b76}
+
+.wafloat{position:fixed; right:18px; bottom:18px; z-index:60}
+.wafloat a{display:inline-flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; background:#25D366; color:#fff; font-size:28px; box-shadow:var(--shadow)}
+
+@media (max-width: 900px){
+  .contact{grid-template-columns:1fr}
+}
