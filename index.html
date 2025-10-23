@@ -10,7 +10,8 @@
   <meta property="og:description" content="Estufas de alta eficiencia – ideales para terrazas, matrimonios, restaurantes y eventos." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="logo-servicios-integrales.jpg" />
-  <link rel="icon" href="logo-servicios-integrales.jpg" />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
@@ -47,25 +48,40 @@
   </header>
 
   <div class="hero">
-    <div class="slides">
-      <figure>
-        <img src="2-aspectos-tecnicos.webp" alt="Fila de estufas a gas en terraza jardin"/>
-        <div class="overlay"></div>
-      </figure>
-      <figure>
-        <img src="boda.png" alt="Matrimonio bajo carpa con estufas tipo hongo"/>
-        <div class="overlay"></div>
-      </figure>
-      <figure>
-        <img src="noche.png" alt="Restaurante de noche con calefactores exteriores"/>
-        <div class="overlay"></div>
-      </figure>
+    <div class="hero-viewport" id="heroViewport">
+      <div class="slides" id="slides">
+        <div class="slide">
+          <img src="2-aspectos-tecnicos.webp" alt="Fila de estufas a gas en terraza jardin"/>
+          <div class="overlay"></div>
+        </div>
+        <div class="slide">
+          <img src="boda.png" alt="Matrimonio bajo carpa con estufas tipo hongo"/>
+          <div class="overlay"></div>
+        </div>
+        <div class="slide">
+          <img src="noche.png" alt="Restaurante de noche con calefactores exteriores"/>
+          <div class="overlay"></div>
+        </div>
+      </div>
+      <div class="carousel-nav" aria-hidden="false">
+        <button class="nav-btn" id="prevBtn" aria-label="Imagen anterior">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 19L8 12L15 5" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="nav-btn" id="nextBtn" aria-label="Imagen siguiente">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 5L16 12L9 19" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
     </div>
     <div class="copy">
       <div>
         <div class="badge">Alta eficiencia · Consumo optimizado · Instalación rápida</div>
-        <h1>Calor inmediato para <span style="color:#fbbf24">terrazas</span>, <span style="color:#93c5fd">matrimonios</span> y <span style="color:#f97316">eventos</span></h1>
-        <p>Entregamos, instalamos y retiramos. Planes flexibles con o sin cilindro, según disponibilidad.</p>
+        <h1 class="hero-title">Calor inmediato para <span style="color:#fbbf24">terrazas</span>, <span style="color:#93c5fd">matrimonios</span> y <span style="color:#f97316">eventos</span></h1>
+        <p class="hero-sub">Entregamos, instalamos y retiramos. Planes flexibles con o sin cilindro, según disponibilidad.</p>
         <div class="actions">
           <a class="btn primary" href="https://wa.me/56993612386?text=Hola%20RGGD%2C%20necesito%20cotizar%20estufas%20para%20mi%20evento%20%F0%9F%8E%89">Hablar por WhatsApp</a>
           <a class="btn light" href="#caracteristicas">Ver características</a>
@@ -168,12 +184,66 @@
     </div>
   </footer>
 
+  <!-- Botón flotante WhatsApp con logo -->
   <div class="wafloat" aria-label="WhatsApp">
-    <a href="https://wa.me/56993612386?text=Hola%20RGGD%2C%20necesito%20información%20de%20estufas" title="Escríbenos por WhatsApp" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+    <a href="https://wa.me/56993612386?text=Hola%20RGGD%2C%20necesito%20información%20de%20estufas" title="Escríbenos por WhatsApp" target="_blank" rel="noopener" aria-label="WhatsApp" aria-live="polite">
+      <!-- WhatsApp SVG -->
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.11 17.28c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.9 1.12-.17.19-.33.22-.62.08-.29-.14-1.21-.45-2.3-1.44-.85-.76-1.42-1.69-1.58-1.98-.17-.29-.02-.45.12-.59.12-.12.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.49-.17 0-.36-.02-.55-.02-.19 0-.5.07-.76.36-.26.29-1.0.98-1.0 2.39s1.03 2.77 1.17 2.96c.14.19 2.03 3.1 4.92 4.34.69.3 1.23.48 1.65.62.69.22 1.31.19 1.8.12.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z" fill="#ffffff"/>
+        <path d="M26.9 5.1C24.1 2.3 20.65 1 16.99 1 8.85 1 2.25 7.6 2.25 15.75c0 2.55.67 5.04 1.95 7.24L2 31l8.18-2.15c2.12 1.16 4.51 1.78 6.81 1.78h.01c8.14 0 14.75-6.6 14.75-14.75 0-3.66-1.29-7.12-4.09-9.92zM16.99 28.46h-.01c-2.13 0-4.22-.57-6.05-1.65l-.43-.26-4.86 1.27 1.3-4.74-.28-.49c-1.19-2.04-1.81-4.36-1.81-6.78 0-7.36 5.99-13.35 13.36-13.35 3.56 0 6.9 1.38 9.41 3.89 2.5 2.51 3.88 5.86 3.88 9.42 0 7.37-5.99 13.36-13.36 13.36z" fill="#ffffff"/>
+      </svg>
+    </a>
   </div>
 
   <script>
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Carousel with buttons + autoplay
+    const slides = document.getElementById('slides');
+    const slideEls = Array.from(slides.children);
+    const dots = document.getElementById('dots');
+    let idx = 0;
+    const total = slideEls.length;
+
+    function renderDots(){
+      dots.innerHTML = '';
+      for(let i=0;i<total;i++){
+        const d = document.createElement('button');
+        d.className = 'dot' + (i===idx ? ' active' : '');
+        d.setAttribute('aria-label','Ir a la imagen '+(i+1));
+        d.addEventListener('click', ()=>{ idx = i; update(); restartAuto(); });
+        dots.appendChild(d);
+      }
+    }
+
+    function update(){
+      slides.style.transform = `translateX(-${idx*100}%)`;
+      Array.from(dots.children).forEach((el,i)=>{
+        el.classList.toggle('active', i===idx);
+      });
+    }
+
+    function next(){ idx = (idx+1)%total; update(); }
+    function prev(){ idx = (idx-1+total)%total; update(); }
+
+    document.getElementById('nextBtn').addEventListener('click', ()=>{ next(); restartAuto(); });
+    document.getElementById('prevBtn').addEventListener('click', ()=>{ prev(); restartAuto(); });
+
+    // Autoplay
+    let timer = setInterval(next, 6000);
+    function restartAuto(){
+      clearInterval(timer);
+      timer = setInterval(next, 6000);
+    }
+
+    // Pause on hover
+    const viewport = document.getElementById('heroViewport');
+    viewport.addEventListener('mouseenter', ()=>clearInterval(timer));
+    viewport.addEventListener('mouseleave', restartAuto);
+
+    renderDots();
+    update();
   </script>
 </body>
 </html>
